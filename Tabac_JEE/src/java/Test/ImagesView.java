@@ -9,19 +9,25 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 /**
  *
  * @author Marion
  */
 @ManagedBean
+@SessionScoped
 public class ImagesView {
     private List<String> pictures;
+
+    public ImagesView() {
+    }
+    
     
     @PostConstruct
     public void init(){
         pictures = new ArrayList<String>();
-        for (int i = 1; i<=9   ; i++){
+        for (int i = 1; i<=13  ; i++){
             pictures.add("I"+i+".PNG");
         }
     }

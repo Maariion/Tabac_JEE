@@ -12,8 +12,12 @@ h1
 {
     font-size: 70px;
     color: red; 
-    display:inline-block;
-    float: right;
-    
+     
+}
+
+.ui-menuitem-text{
+    font-size:32px;
+    color:white;
+    padding:10%;
 }
 
