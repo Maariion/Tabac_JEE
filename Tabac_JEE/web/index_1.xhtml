@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>StopSmoke</title>
         <link href="CSS/appStyle.css" rel="stylesheet"/>
@@ -11,7 +12,7 @@
         <h1>test images</h1>
         <br/>
         <p:galleria value="#{ImagesView.pictures}" var="pictures" panelWidth="500" panelHeight="313" showCaption="true">
-            <p:graphicImage value="pictures/#{pictures}" alt="test" title="#{pictures}" />
+            <p:graphicImage value="/resources/images/I4.PNG" alt="test" title="#{pictures}" />
         </p:galleria>
         
     </h:body>

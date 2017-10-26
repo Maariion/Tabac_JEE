@@ -11,7 +11,9 @@ and open the template in the editor.
 h1
 {
     font-size: 70px;
-    color: red;
+    color: red; 
+    display:inline-block;
+    float: right;
     
 }
 
