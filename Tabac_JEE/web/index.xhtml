@@ -16,6 +16,12 @@
                 <p:menuitem value="Inscription" url="#" style="font-size:32px;margin-left:250px;color:white"/>
                 <p:menuitem value="Ma santé" url="#" style="font-size:32px;margin-left:250px;color: white"/>
             </p:menubar>
+            <br/>
+            <p:galleria value="#{ImagesView.pictures}" var="pictures" panelWidth="500" panelHeight="313" showCaption="true">
+                <p:graphicImage value="/resources/images/I4.PNG" alt="test" title="#{pictures}" />
+            </p:galleria>
+            
+            
         </h:form>
         
     </h:body>
