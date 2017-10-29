@@ -11,9 +11,11 @@
     <h:body>
         <h1>test images</h1>
         <br/>
-        <p:galleria value="#{ImagesView.pictures}" var="pictures" panelWidth="500" panelHeight="313" showCaption="true">
-            <p:graphicImage value="/resources/images/I4.PNG" alt="test" title="#{pictures}" />
-        </p:galleria>
+        <p:galleria value="#{imagesView.pictures}" var="pic" panelWidth="500" panelHeight="313" showCaption="true">
+                <center>
+                   <p:graphicImage value="/res/images/#{pic}" alt="test" title="#{pic}" /> 
+                </center>
+            </p:galleria>
         
     </h:body>
 </html>

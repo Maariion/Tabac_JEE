@@ -4,7 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>StopSmoke</title>
+        <title>Ma santé</title>
         <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
@@ -17,19 +17,16 @@
                 <p:menubar styleClass="menu">
                     <p:menuitem value="Connexion" url="#" />
                     <p:menuitem value="Inscription" url="#" />
-                    <p:menuitem value="Ma santé" url="masante.xhtml"/>
+                    <p:menuitem value="Ma santé" url="#" />
                 </p:menubar>
             </p:layoutUnit>
             
-            <br/><br/><br/>
+            <br/><br/>
             <p:layoutUnit position="center">
-                <p:contentFlow value="#{ImagesView.pictures}" var="pic" >
-                    <p:graphicImage name="/res/images/#{pic}" styleClass="content" />
-                    <div class="caption">#{pic}</div>
-                </p:contentFlow> 
+                <center>
+                    <img src="/res/images/schemaClope.PNG" alt="test"/>
+                </center>
             </p:layoutUnit>
-     
         </p:layout>
     </h:body>
 </html>
-

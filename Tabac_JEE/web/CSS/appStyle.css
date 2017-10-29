@@ -10,14 +10,31 @@ and open the template in the editor.
 
 h1
 {
+    font-family: Verdana;
     font-size: 70px;
-    color: red; 
-     
+    color: red;
+    text-align: right;
+    margin-right: 5%;
 }
 
 .ui-menuitem-text{
     font-size:32px;
     color:white;
-    padding:10%;
+    padding-top:5%;
+    padding-bottom:5%;
+    padding-left: 35%;
+    padding-right:35%
 }
 
+.ui-menubar{
+    background-color: darkred;
+    background-image: none;
+}
+
+.ui-layout-unit .ui-layout-unit-content{
+    overflow: hidden;
+}
+
+.ui-layout-unit{
+    border: none;
+}

@@ -26,7 +26,7 @@ public class ImagesView {
     
     @PostConstruct
     public void init(){
-        pictures = new ArrayList<String>();
+        pictures = new ArrayList<>();
         for (int i = 1; i<=13  ; i++){
             pictures.add("I"+i+".PNG");
         }
