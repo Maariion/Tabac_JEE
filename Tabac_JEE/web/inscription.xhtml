@@ -12,22 +12,14 @@
         <p:layout fullPage="true">
             
             <p:layoutUnit position="north" >
-                <h1>StopSmoke</h1>
+                <h1>Inscription</h1>
                 <br/><br/>   
                 <p:menubar styleClass="menu">
-                    <p:menuitem value="Connexion" url="connexion.xhtml" />
-                    <p:menuitem value="Inscription" url="inscription.xhtml" />
-                    <p:menuitem value="Ma santé" url="masante.xhtml"/>
+                    <p:menuitem value="Programme" url="mon_programme" />
+                    <p:menuitem value="Retour" url="index.xhtml" />
                 </p:menubar>
             </p:layoutUnit>
-            
-            <br/><br/><br/>
-            <p:layoutUnit position="center">
-                <p:contentFlow value="#{ImagesView.pictures}" var="pic" >
-                    <p:graphicImage name="res/images/#{pic}" styleClass="content" />
-                    <div class="caption">#{pic}</div>
-                </p:contentFlow> 
-            </p:layoutUnit>
+           
         </p:layout>
     </h:body>
 </html>

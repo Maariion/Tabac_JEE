@@ -4,29 +4,20 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Ma santé</title>
+        <title>StopSmoke</title>
         <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
     </h:head>
-    <h:body>
-        
-        <p:layout fullPage="true">
-            
+    <h:body>       
+        <p:layout fullPage="true">           
             <p:layoutUnit position="north" >
-                <h1>StopSmoke</h1>
+                <h1>Connexion</h1>
                 <br/><br/>   
                 <p:menubar styleClass="menu">
-                    <p:menuitem value="Connexion" url="#" />
-                    <p:menuitem value="Inscription" url="#" />
-                    <p:menuitem value="Ma santé" url="#" />
+                    <p:menuitem value="Programme" url="mon_programme.xhtml" />
+                    <p:menuitem value="Retour" url="index.xhtml" />
                 </p:menubar>
-            </p:layoutUnit>
-            
-            <br/><br/>
-            <p:layoutUnit position="center">
-                <center>
-                    <img src="res/images/schemaClope.PNG" alt="test"/>
-                </center>
-            </p:layoutUnit>
+            </p:layoutUnit>           
         </p:layout>
     </h:body>
 </html>
+

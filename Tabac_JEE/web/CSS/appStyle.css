@@ -8,13 +8,36 @@ and open the template in the editor.
     Author     : Utilisateur
 */
 
+/* 
+SITE POUR LES COULEURS -- NE PAS SUPRIMER 
+http://stylescss.free.fr/couleurs.php
+*/
+
 h1
 {
     font-family: Verdana;
     font-size: 70px;
-    color: red;
+    color: #483D8B;
     text-align: right;
     margin-right: 5%;
+    
+}
+
+body
+{
+    background-color: #F5F5DC;
+}
+head
+{
+    background-color: #F5F5DC;
+}
+html
+{
+    background-color: #F5F5DC;
+}
+layoutUnit
+{
+   background-color: #F5F5DC; 
 }
 
 .ui-menuitem-text{
@@ -27,8 +50,9 @@ h1
 }
 
 .ui-menubar{
-    background-color: darkred;
+
     background-image: none;
+    background-color: #CD5C5C;
 }
 
 .ui-layout-unit .ui-layout-unit-content{
