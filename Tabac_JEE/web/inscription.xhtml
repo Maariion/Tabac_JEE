@@ -7,10 +7,8 @@
         <title>StopSmoke</title>
         <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
     </h:head>
-    <h:body>
-        
-        <p:layout fullPage="true">
-            
+    <h:body></h:body>      
+        <p:layout fullPage="true">      
             <p:layoutUnit position="north" >
                 <h1>Inscription</h1>
                 <br/><br/>   
@@ -19,8 +17,21 @@
                     <p:menuitem value="Retour" url="index.xhtml" />
                 </p:menubar>
             </p:layoutUnit>
-           
-        </p:layout>
-    </h:body>
+           </p:layout>
+            <center>
+                <h2>Je crée mon compte : </h2>
+                 <table border="1" cellpadding="5" cellspacing="0,5" width="20%" bgcolor="AFFE4195E" >
+                    <tr>
+                       <th width="20%" align="center">Pseudo: </th> <td><p:inputText value ="#{utilisateur.uti.pseudoU}"/></td>  
+                       <th width="20%" align="center">Age: </th> <td><p:inputText value ="#{utilisateur.uti.ageU}"/></td>  
+                       <th width="20%" align="center">Nombre de cigarettes par jours: </th> <td><p:inputText value ="#{utilisateur.uti.consommationU}"/></td>
+                       <th width="20%" align="center">Marque: </th> <td><p:inputText value ="#{utilisateur.uti.idMarque}"/></td>
+                    </tr>
+                </table>
+                <br />
+                    <p:commandButton value ="Ajouter" action="#{utilisateur.addUtilisateur()}" update="etud"/>        
+            </center>
+        
+    
 </html>
 
