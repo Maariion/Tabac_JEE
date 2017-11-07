@@ -19,17 +19,20 @@
             <center>
                 <h2>Je crée mon compte : </h2><br></br><br></br>
                    <h:form>  
-                    <tr> 
-                       <th width="20%" align="center">pseudo: </th><br></br>
-                       <td><p:inputText value ="#{utilisateur.uti.pseudoU}"/></td> 
-                       <th width="20%" align="center">Age: </th><br></br>
-                       <td><p:inputText value ="#{utilisateur.uti.ageU}"/></td>  
-                       <th width="20%" align="center">Nombre de cigarettes par jours: </th> <br></br>
-                       <td><p:inputText value ="#{utilisateur.uti.consommationU}"/></td>
-                       <th width="20%" align="center">Marque: </th> <br></br>
-                       <td><p:inputText value ="#{utilisateur.uti.idMarque}"/></td>
-                         <p:commandButton value ="Ajouter" action="#{utilisateur.addUtilisateur()}" update="panel"/>   
-                    </tr>
+                       <table border="1" cellpadding="50" cellspacing="0,5" width="20%" bgcolor="AFFE4195E" >
+                            <tr> 
+                              <th width="20%" align="center">pseudo: </th>
+                              <td><p:inputText value ="#{utilisateur.uti.pseudoU}"/></td> 
+                              <th width="20%" align="center">Age: </th><br></br>
+                              <td><p:inputText value ="#{utilisateur.uti.ageU}"/></td>  
+                              <th width="20%" align="center">Nombre de cigarettes par jours: </th>
+                              <td><p:inputText value ="#{utilisateur.uti.consommationU}"/></td>
+                              <th width="20%" align="center">Marque: </th> 
+                              <td><p:inputText value ="#{utilisateur.uti.idMarque}"/></td>
+                                  
+                           </tr>                          
+                       </table>
+                        <p:commandButton value ="Ajouter" action="#{utilisateur.addUtilisateur()}" update="panel" /> 
                     </h:form>                   
             </center>
         </p:layout>
