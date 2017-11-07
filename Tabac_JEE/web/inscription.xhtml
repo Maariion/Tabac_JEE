@@ -6,32 +6,34 @@
     <h:head>
         <title>StopSmoke</title>
         <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
+    
     </h:head>
-    <h:body></h:body>      
-        <p:layout fullPage="true">      
-            <p:layoutUnit position="north" >
+    <h:body>   
+        <p:layout fullPage="true">
                 <h1>Inscription</h1>
                 <br/><br/>   
                 <p:menubar styleClass="menu">
                     <p:menuitem value="Programme" url="mon_programme" />
                     <p:menuitem value="Retour" url="index.xhtml" />
                 </p:menubar>
-            </p:layoutUnit>
-           </p:layout>
             <center>
-                <h2>Je crée mon compte : </h2>
-                 <table border="1" cellpadding="5" cellspacing="0,5" width="20%" bgcolor="AFFE4195E" >
-                    <tr>
-                       <th width="20%" align="center">Pseudo: </th> <td><p:inputText value ="#{utilisateur.uti.pseudoU}"/></td>  
-                       <th width="20%" align="center">Age: </th> <td><p:inputText value ="#{utilisateur.uti.ageU}"/></td>  
-                       <th width="20%" align="center">Nombre de cigarettes par jours: </th> <td><p:inputText value ="#{utilisateur.uti.consommationU}"/></td>
-                       <th width="20%" align="center">Marque: </th> <td><p:inputText value ="#{utilisateur.uti.idMarque}"/></td>
+                <h2>Je crée mon compte : </h2><br></br><br></br>
+                   <h:form>  
+                    <tr> 
+                       <th width="20%" align="center">pseudo: </th><br></br>
+                       <td><p:inputText value ="#{utilisateur.uti.pseudoU}"/></td> 
+                       <th width="20%" align="center">Age: </th><br></br>
+                       <td><p:inputText value ="#{utilisateur.uti.ageU}"/></td>  
+                       <th width="20%" align="center">Nombre de cigarettes par jours: </th> <br></br>
+                       <td><p:inputText value ="#{utilisateur.uti.consommationU}"/></td>
+                       <th width="20%" align="center">Marque: </th> <br></br>
+                       <td><p:inputText value ="#{utilisateur.uti.idMarque}"/></td>
+                         <p:commandButton value ="Ajouter" action="#{utilisateur.addUtilisateur()}" update="panel"/>   
                     </tr>
-                </table>
-                <br />
-                    <p:commandButton value ="Ajouter" action="#{utilisateur.addUtilisateur()}" update="etud"/>        
+                    </h:form>                   
             </center>
-        
+        </p:layout>
+        </h:body> 
     
 </html>
 

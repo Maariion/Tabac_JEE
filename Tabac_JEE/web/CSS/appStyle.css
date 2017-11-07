@@ -17,7 +17,7 @@ h1
 {
     font-family: Verdana;
     font-size: 70px;
-    color: #483D8B;
+    color: #B22222;
     text-align: right;
     margin-right: 5%;
     
@@ -25,24 +25,24 @@ h1
 
 body
 {
-    background-color: #F5F5DC;
+    background-color: #FFF8DC;
 }
 head
 {
-    background-color: #F5F5DC;
+    background-color: #FFF8DC;
 }
 html
 {
-    background-color: #F5F5DC;
+    background-color: #FFF8DC;
 }
 layoutUnit
 {
-   background-color: #F5F5DC; 
+   background-color: #FFF8DC; 
 }
 
 .ui-menuitem-text{
     font-size:32px;
-    color:white;
+    color:black;
     padding-top:5%;
     padding-bottom:5%;
     padding-left: 35%;

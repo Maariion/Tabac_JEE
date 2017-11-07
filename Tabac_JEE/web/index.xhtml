@@ -3,18 +3,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
+     
     <h:head>
         <title>StopSmoke</title>
-        <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
+        
     </h:head>
     <h:body>
-        
+       <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
         <p:layout fullPage="true">
             
             <p:layoutUnit position="north" >
+                
                 <h1>StopSmoke</h1>
                 <br/><br/>   
                 <p:menubar styleClass="menu">
+                    
                     <p:menuitem value="Inscription" url="inscription.xhtml" />                                      
                     <p:menuitem value="Connexion" url="connexion.xhtml" />
                     <p:menuitem value="Ma santé" url="masante.xhtml"/>
@@ -22,8 +25,8 @@
             </p:layoutUnit>
             
             <br/><br/><br/>
-            <p:layoutUnit position="center">
-                <p:contentFlow value="#{ImagesView.pictures}" var="pic" >
+                    <p:layoutUnit position="center">
+                <p:contentFlow value="#{ImagesView.pictures}" var="pic">
                     <p:graphicImage name="res/images/#{pic}" styleClass="content" />
                     <div class="caption">#{pic}</div>
                 </p:contentFlow> 
