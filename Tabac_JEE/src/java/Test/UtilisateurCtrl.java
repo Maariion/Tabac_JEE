@@ -9,7 +9,7 @@ import javax.inject.Named;
 /**
  * @author M.SERAZIN & A.DAYRE
  */
-@Named(value="utilisateur")
+@Named(value="utilisateurctrl")
 @ViewScoped
 public class UtilisateurCtrl implements Serializable {
     

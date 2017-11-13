@@ -10,28 +10,20 @@
     </h:head>
     <h:body>
        <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
-        <p:layout fullPage="true">
-            
-            <p:layoutUnit position="north" >
-                
-                <h1>StopSmoke</h1>
+            <h1>StopSmoke</h1>
                 <br/><br/>   
                 <p:menubar styleClass="menu">
-                    
                     <p:menuitem value="Inscription" url="inscription.xhtml" />                                      
                     <p:menuitem value="Connexion" url="connexion.xhtml" />
                     <p:menuitem value="Ma santé" url="masante.xhtml"/>
                 </p:menubar>
-            </p:layoutUnit>
-            
             <br/><br/><br/>
-                    <p:layoutUnit position="center">
-                <p:contentFlow value="#{ImagesView.pictures}" var="pic">
-                    <p:graphicImage name="res/images/#{pic}" styleClass="content" />
-                    <div class="caption">#{pic}</div>
-                </p:contentFlow> 
-            </p:layoutUnit>
-        </p:layout>
+                    <p:contentFlow value="#{imagesView.pictures}" var="pic">
+                        <p:graphicImage value="res/images/#{pic}" styleClass="content" />
+                        <div class="caption">#{pic}</div>
+                        
+                    </p:contentFlow> 
+
     </h:body>
 </html>
 

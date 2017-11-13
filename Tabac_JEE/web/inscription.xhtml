@@ -3,40 +3,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
+      <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
     <h:head>
         <title>StopSmoke</title>
-        <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
-    
     </h:head>
-    <h:body>   
-        <p:layout fullPage="true">
-                <h1>Inscription</h1>
-                <br/><br/>   
+        <h:body>   
+            <h1>Inscription</h1>
                 <p:menubar styleClass="menu">
                     <p:menuitem value="Programme" url="mon_programme" />
                     <p:menuitem value="Retour" url="index.xhtml" />
                 </p:menubar>
             <center>
-                <h2>Je crée mon compte : </h2><br></br><br></br>
+                <h2>Je crée mon compte : </h2>
                    <h:form>  
-                       <table border="1" cellpadding="50" cellspacing="0,5" width="20%" bgcolor="AFFE4195E" >
                             <tr> 
                               <th width="20%" align="center">pseudo: </th>
-                              <td><p:inputText value ="#{utilisateur.uti.pseudoU}"/></td> 
+                              <td><p:inputText value ="#{utilisateurctrl.uti.pseudoU}"/></td> 
                               <th width="20%" align="center">Age: </th><br></br>
-                              <td><p:inputText value ="#{utilisateur.uti.ageU}"/></td>  
+                              <td><p:inputText value ="#{utilisateurctrl.uti.ageU}"/></td>  
                               <th width="20%" align="center">Nombre de cigarettes par jours: </th>
-                              <td><p:inputText value ="#{utilisateur.uti.consommationU}"/></td>
+                              <td><p:inputText value ="#{utilisateurctrl.uti.consommationU}"/></td>
                               <th width="20%" align="center">Marque: </th> 
-                              <td><p:inputText value ="#{utilisateur.uti.idMarque}"/></td>
-                                  
-                           </tr>                          
-                       </table>
-                        <p:commandButton value ="Ajouter" action="#{utilisateur.addUtilisateur()}" update="panel" /> 
+                              <td><p:inputText value ="#{utilisateurctrl.uti.idMarque}"/></td>
+                            </tr>                          
+                        <p:commandButton value ="Ajouter" action="#{utilisateurctrl.addUtilisateur()}" /> 
                     </h:form>                   
             </center>
-        </p:layout>
         </h:body> 
-    
 </html>
 
