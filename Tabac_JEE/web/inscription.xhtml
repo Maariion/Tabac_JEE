@@ -24,7 +24,7 @@
                              <br/> 
                              
                             Mot de passe: <br/>
-                            <h:panelGrid columns="2" cellpadding="5">
+                            <h:panelGrid columns="1" style="margin-bottom: 10px">
                             <p:password id="inlineFeedback" value="#{passwordView.password4}" feedback="true" inline="true" />
                             </h:panelGrid>
                              <br/>
@@ -52,8 +52,6 @@
                             </p:selectOneMenu>
                            <br/> <br/><br/>                       
                         <p:commandButton value ="Créer mon compte" action="#{utilisateurctrl.addUtilisateur()}" /> 
-                        
-                       
                     </h:form>                   
             </center>
         </h:body> 
