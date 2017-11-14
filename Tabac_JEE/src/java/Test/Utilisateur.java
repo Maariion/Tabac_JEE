@@ -35,6 +35,17 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Utilisateur.findByProgrammeU", query = "SELECT u FROM Utilisateur u WHERE u.programmeU = :programmeU")})
 public class Utilisateur implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 10)
+    @Column(name = "password")
+    private String password;
+    @Basic(optional = false)
+    @NotNull
+    @Lob
+    @Column(name = "photo_U")
+    private byte[] photoU;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,11 +74,6 @@ public class Utilisateur implements Serializable {
     @Column(name = "date_inscription")
     @Temporal(TemporalType.DATE)
     private Date dateInscription;
-    @Basic(optional = false)
-    @NotNull
-    @Lob
-    @Column(name = "photo_U")
-    private byte[] photoU;
     @Basic(optional = false)
     @NotNull
     @Column(name = "programme_U")
@@ -178,6 +184,14 @@ public class Utilisateur implements Serializable {
     @Override
     public String toString() {
         return "Test.Utilisateur[ idU=" + idU + " ]";
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
     
 }

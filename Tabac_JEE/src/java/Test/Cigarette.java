@@ -25,7 +25,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "cigarette")
 @NamedQueries({
-    @NamedQuery(name = "Cigarette.findAll", query = "SELECT c FROM Cigarette c")
+    @NamedQuery(name = "Cigarette.findAll", query = "SELECT c.marqueC FROM Cigarette c")
     , @NamedQuery(name = "Cigarette.findByIdC", query = "SELECT c FROM Cigarette c WHERE c.idC = :idC")
     , @NamedQuery(name = "Cigarette.findByNomC", query = "SELECT c FROM Cigarette c WHERE c.nomC = :nomC")
     , @NamedQuery(name = "Cigarette.findByMarqueC", query = "SELECT c FROM Cigarette c WHERE c.marqueC = :marqueC")

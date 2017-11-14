@@ -25,19 +25,19 @@ h1
 
 body
 {
-    background-color: #FFF8DC;
+    background-color: #F0FFF0;
 }
 head
 {
-    background-color: #FFF8DC;
+    background-color: #F0FFF0;
 }
 html
 {
-    background-color: #FFF8DC;
+    background-color: #F0FFF0;
 }
 layoutUnit
 {
-   background-color: #FFF8DC; 
+   background-color: #F0FFF0; 
 }
 
 .ui-menuitem-text{
@@ -52,7 +52,7 @@ layoutUnit
 .ui-menubar{
 
     background-image: none;
-    background-color: #CD5C5C;
+    background-color: #66CDAA;
 }
 
 .ui-layout-unit .ui-layout-unit-content{
