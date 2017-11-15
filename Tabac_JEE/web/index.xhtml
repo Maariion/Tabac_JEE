@@ -18,7 +18,8 @@
                     <p:menuitem value="Ma santé" url="masante.xhtml"/>
                 </p:menubar>
             <br/><br/><br/>
-                    <p:contentFlow value="#{imagesView.pictures}" var="pic">
+            <p:contentFlow value="#{imagesView.pictures}" var="pic" style="background-color: #F0FFF0" >
+                         
                         <p:graphicImage value="res/images/#{pic}" styleClass="content" />
                         <div class="caption">#{pic}</div>
                     </p:contentFlow> 

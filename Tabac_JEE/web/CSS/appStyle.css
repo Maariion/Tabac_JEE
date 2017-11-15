@@ -28,6 +28,8 @@ body
 {
     background-color: #F0FFF0;
 }
+
+
 head
 {
     background-color: #F0FFF0;
@@ -43,7 +45,7 @@ layoutUnit
 
 .ui-menuitem-text{
     font-size:32px;
-    color:black;
+    color:#191970;
     padding-top:5%;
     padding-bottom:5%;
     padding-left: 35%;
@@ -54,8 +56,8 @@ layoutUnit
 
     background-image: none;
     background-color: #66CDAA;
-    height: 100px;
-    width: 50%;
+    width:200px;
+    height:50px;
 }
 
 .ui-layout-unit .ui-layout-unit-content{
