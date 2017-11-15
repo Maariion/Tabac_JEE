@@ -20,6 +20,7 @@ h1
     color: #2E8B57;
     text-align: center;
     margin-right: 5%;
+
     
 }
 
@@ -53,6 +54,8 @@ layoutUnit
 
     background-image: none;
     background-color: #66CDAA;
+    height: 100px;
+    width: 50%;
 }
 
 .ui-layout-unit .ui-layout-unit-content{

@@ -25,20 +25,20 @@
                              
                             Mot de passe: <br/>
                             <h:panelGrid columns="1" style="margin-bottom: 10px">
-                            <p:password id="inlineFeedback" value="#{passwordView.password4}" feedback="true" inline="true" />
+                                <p:password id="inlineFeedback" value="#{utilisateurctrl.uti.password}" feedback="true" inline="true" />
                             </h:panelGrid>
                              <br/>
                              
                             Age : <br/>
                             <h:panelGrid columns="1" style="margin-bottom: 10px">
-                                <p:inputText id="txt6" value="#{sliderView.number2}" />
+                                <p:inputText id="txt6" value="#{utilisateurctrl.uti.ageU}" />
                                 <p:slider for="txt6"/>
                             </h:panelGrid>
                             <br/>
                                                     
                             Cigarettes par jours : <br/>
                             <h:panelGrid columns="1" style="margin-bottom: 10px">
-                                <p:inputText id="txt5" value="#{sliderView.number1}" />
+                                <p:inputText id="txt5" value="#{utilisateurctrl.uti.consommationU}" />
                                 <p:slider for="txt5">
                                     <p:ajax event="slideEnd" listener="#{sliderView.onSlideEnd}" update="growl" />
                                 </p:slider>

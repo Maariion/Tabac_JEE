@@ -32,19 +32,24 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Utilisateur.findByConsommationU", query = "SELECT u FROM Utilisateur u WHERE u.consommationU = :consommationU")
     , @NamedQuery(name = "Utilisateur.findByIdMarque", query = "SELECT u FROM Utilisateur u WHERE u.idMarque = :idMarque")
     , @NamedQuery(name = "Utilisateur.findByDateInscription", query = "SELECT u FROM Utilisateur u WHERE u.dateInscription = :dateInscription")
-    , @NamedQuery(name = "Utilisateur.findByProgrammeU", query = "SELECT u FROM Utilisateur u WHERE u.programmeU = :programmeU")})
+    , @NamedQuery(name = "Utilisateur.findByProgrammeU", query = "SELECT u FROM Utilisateur u WHERE u.programmeU = :programmeU")
+    , @NamedQuery(name = "Utilisateur.getId", query = "SELECT c.idC FROM Cigarette c join Utilisateur u on c.idC=u.idMarque WHERE c.marqueC = :marqueU")}
+    )
 public class Utilisateur implements Serializable {
+
+    @Column(name = "id_marque")
+    private Integer idMarque;
+    @Lob
+    @Column(name = "photo_U")
+    private byte[] photoU;
+    @Column(name = "programme_U")
+    private Boolean programmeU;
 
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 10)
     @Column(name = "password")
     private String password;
-    @Basic(optional = false)
-    @NotNull
-    @Lob
-    @Column(name = "photo_U")
-    private byte[] photoU;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -67,17 +72,11 @@ public class Utilisateur implements Serializable {
     private int consommationU;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "id_marque")
-    private int idMarque;
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "date_inscription")
     @Temporal(TemporalType.DATE)
     private Date dateInscription;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "programme_U")
-    private boolean programmeU;
+    
+    private String marqueU;
 
     public Utilisateur() {
     }
@@ -86,9 +85,10 @@ public class Utilisateur implements Serializable {
         this.idU = idU;
     }
 
-    public Utilisateur(Integer idU, String pseudoU, int ageU, int consommationU, int idMarque, Date dateInscription, byte[] photoU, boolean programmeU) {
+    public Utilisateur(Integer idU, String pseudoU, String password, int ageU, int consommationU, int idMarque, Date dateInscription, byte[] photoU, boolean programmeU) {
         this.idU = idU;
         this.pseudoU = pseudoU;
+        this.password = password;
         this.ageU = ageU;
         this.consommationU = consommationU;
         this.idMarque = idMarque;
@@ -193,5 +193,15 @@ public class Utilisateur implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getMarqueU() {
+        return marqueU;
+    }
+
+    public void setMarqueU(String marqueU) {
+        this.marqueU = marqueU;
+    }
+
+      
     
 }

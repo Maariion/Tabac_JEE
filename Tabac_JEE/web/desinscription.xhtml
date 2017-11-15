@@ -11,12 +11,28 @@
     </h:head>
         <h:body>
             <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
-                <h1>Désinscription</h1>
+                <h1>Se désinscrire</h1>
                 <br/><br/>   
                 <p:menubar styleClass="menu">
                     <p:menuitem value="Retour" url="index.xhtml" />
                 </p:menubar>
-                
+                <center>
+                <h2>Renseignez votre pseudo et mot de passe pour vous désinscrire de l'application.</h2>
+                    <form method="post" action="connexion.xhtml">
+                        <fieldset>
+                            <legend>Formulaire de désinscription</legend>
+                                Pseudo : <br/>
+                                <p:inputText type="pseudo" id="pseudo" value="${utilisateurctrl.uti.pseudoU}" size="20" maxlength="60" />
+                                <br /><br />
+                                Mot de passe: <br/>
+                                <h:panelGrid columns="1" style="margin-bottom: 10px">
+                                <p:password id="inlineFeedback" value="#{passwordView.password4}" feedback="true" inline="true" />
+                                </h:panelGrid>
+                                <br /><br />
+                                <p:commandButton type="submit" value="Je me désinscris" icon="ui-icon-check"/><br /><br />
+                        </fieldset>
+                    </form>
+                </center>
         </h:body>
 </html>
 

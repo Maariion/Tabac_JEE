@@ -23,15 +23,15 @@
                     <form method="post" action="connexion.xhtml">
                         <fieldset>
                             <legend>Formulaire de connexion</legend>
-                          
-                                Pseudo : 
+                                Pseudo : <br/>
                                 <p:inputText type="pseudo" id="pseudo" value="${utilisateurctrl.uti.pseudoU}" size="20" maxlength="60" />
                                 <br /><br />
-                                Mot de passe :
-                                <p:inputText type="password" id="password"  value="" size="20" maxlength="20" />
+                                Mot de passe: <br/>
+                                <h:panelGrid columns="1" style="margin-bottom: 10px">
+                                <p:password id="inlineFeedback" value="#{passwordView.password4}" feedback="true" inline="true" />
+                                </h:panelGrid>
                                 <br /><br />
                                 <p:commandButton type="submit" value="connexion" icon="ui-icon-check"/><br /><br />
-
                         </fieldset>
                     </form>
                 </center>
