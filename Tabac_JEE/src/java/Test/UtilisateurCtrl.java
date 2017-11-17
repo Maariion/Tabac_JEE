@@ -9,16 +9,16 @@ import javax.inject.Named;
 /**
  * @author M.SERAZIN & A.DAYRE
  */
-@Named(value="utilisateur")
+@Named(value="utilisateurctrl")
 @ViewScoped
 public class UtilisateurCtrl implements Serializable {
     
     @EJB 
     private UtilisateurDao dao;
-    private Utilisateur uti;
+    private Utilisateur uti = new Utilisateur();
     
     public UtilisateurCtrl(){
-        this.uti = new Utilisateur();
+        
     }
     
     public List<Utilisateur> getUtilisateur(){
@@ -26,8 +26,8 @@ public class UtilisateurCtrl implements Serializable {
     }
     
     public void addUtilisateur(){
-        dao.addUtilisateur(this.uti);
-        this.uti = new Utilisateur();
+        dao.addUtilisateur(uti);
+        
     }
 
     public Utilisateur getUti() {

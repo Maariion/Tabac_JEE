@@ -5,26 +5,25 @@
       xmlns:p="http://primefaces.org/ui">
     <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/> 
     <h:head>
-        <title>Tmoche</title>
-        
+        <title>StopSmoke</title>
     </h:head>
     <h:body>
-       
-        <p:layout fullPage="true">
-                <h1>StopSmoke</h1>
+       <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
+            <h1>StopSmoke</h1>
+            
                 <br/><br/>   
                 <p:menubar styleClass="menu">
-                    
                     <p:menuitem value="Inscription" url="inscription.xhtml" />                                      
                     <p:menuitem value="Connexion" url="connexion.xhtml" />
                     <p:menuitem value="Ma santé" url="masante.xhtml"/>
-                </p:menubar>    
+                </p:menubar>
             <br/><br/><br/>
-            <p:contentFlow value="#{imagesView.pictures}" var="pic" style="background-color: #FFF8DC;">
-                    <p:graphicImage value="res/images/#{pic}" styleClass="content" />
-                    <div class="caption">#{pic}</div>
-                </p:contentFlow> 
-        </p:layout>
+            <p:contentFlow value="#{imagesView.pictures}" var="pic" style="background-color: #F0FFF0" >
+                         
+                        <p:graphicImage value="res/images/#{pic}" styleClass="content" />
+                        <div class="caption">#{pic}</div>
+                    </p:contentFlow> 
+
     </h:body>
 </html>
 

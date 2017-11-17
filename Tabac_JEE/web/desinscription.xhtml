@@ -11,18 +11,16 @@
     </h:head>
         <h:body>
             <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
-                <h1>Connexion</h1>
+                <h1>Se désinscrire</h1>
                 <br/><br/>   
                 <p:menubar styleClass="menu">
-                    <p:menuitem value="Programme" url="mon_programme.xhtml" />
-                    <p:menuitem value="Ma santé" url="masante.xhtml"/>
                     <p:menuitem value="Retour" url="index.xhtml" />
                 </p:menubar>
                 <center>
-                <h2>Renseignez vos informations pour vous connecter à l'application.</h2>
+                <h2>Renseignez votre pseudo et mot de passe pour vous désinscrire de l'application.</h2>
                     <form method="post" action="connexion.xhtml">
                         <fieldset>
-                            <legend>Formulaire de connexion</legend>
+                            <legend>Formulaire de désinscription</legend>
                                 Pseudo : <br/>
                                 <p:inputText type="pseudo" id="pseudo" value="${utilisateurctrl.uti.pseudoU}" size="20" maxlength="60" />
                                 <br /><br />
@@ -31,7 +29,7 @@
                                 <p:password id="inlineFeedback" value="#{passwordView.password4}" feedback="true" inline="true" />
                                 </h:panelGrid>
                                 <br /><br />
-                                <p:commandButton type="submit" value="connexion" icon="ui-icon-check"/><br /><br />
+                                <p:commandButton type="submit" value="Je me désinscris" icon="ui-icon-check"/><br /><br />
                         </fieldset>
                     </form>
                 </center>

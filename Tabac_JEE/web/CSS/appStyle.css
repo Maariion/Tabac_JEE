@@ -16,33 +16,36 @@ http://stylescss.free.fr/couleurs.php
 h1
 {
     font-family: Verdana;
-    font-size: 70px;
-    color: #B22222;
-    text-align: right;
+    font-size: 50px;
+    color: #2E8B57;
+    text-align: center;
     margin-right: 5%;
+
     
 }
 
 body
 {
-    background-color: #FFF8DC;
+    background-color: #F0FFF0;
 }
+
+
 head
 {
-    background-color: #FFF8DC;
+    background-color: #F0FFF0;
 }
 html
 {
-    background-color: #FFF8DC;
+    background-color: #F0FFF0;
 }
 layoutUnit
 {
-   background-color: #FFF8DC; 
+   background-color: #F0FFF0; 
 }
 
 .ui-menuitem-text{
     font-size:32px;
-    color:black;
+    color:#191970;
     padding-top:5%;
     padding-bottom:5%;
     padding-left: 35%;
@@ -52,7 +55,8 @@ layoutUnit
 .ui-menubar{
 
     background-image: none;
-    background-color: #CD5C5C;
+    background-color: #66CDAA;
+
 }
 
 .ui-layout-unit .ui-layout-unit-content{
