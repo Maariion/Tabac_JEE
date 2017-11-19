@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Test;
 
 import java.io.Serializable;
@@ -9,87 +13,62 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * @author M.SERAZIN & A.DAYRE
+ *
+ * @author Utilisateur
  */
-
 @Entity
 @Table(name = "utilisateur")
+@XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Utilisateur.findAll", query = "SELECT u FROM Utilisateur u")
-    , @NamedQuery(name = "Utilisateur.findByIdU", query = "SELECT u FROM Utilisateur u WHERE u.idU = :idU")
-    , @NamedQuery(name = "Utilisateur.findByPseudoU", query = "SELECT u FROM Utilisateur u WHERE u.pseudoU = :pseudoU")
-    , @NamedQuery(name = "Utilisateur.findByAgeU", query = "SELECT u FROM Utilisateur u WHERE u.ageU = :ageU")
-    , @NamedQuery(name = "Utilisateur.findByConsommationU", query = "SELECT u FROM Utilisateur u WHERE u.consommationU = :consommationU")
-    , @NamedQuery(name = "Utilisateur.findByIdMarque", query = "SELECT u FROM Utilisateur u WHERE u.idMarque = :idMarque")
-    , @NamedQuery(name = "Utilisateur.findByDateInscription", query = "SELECT u FROM Utilisateur u WHERE u.dateInscription = :dateInscription")
-    , @NamedQuery(name = "Utilisateur.findByProgrammeU", query = "SELECT u FROM Utilisateur u WHERE u.programmeU = :programmeU")
-    , @NamedQuery(name = "Utilisateur.getId", query = "SELECT c.idC FROM Cigarette c join Utilisateur u on c.idC=u.idMarque WHERE c.marqueC = :marqueU")}
-    )
+    @NamedQuery(name = "Utilisateur.findAll", query = "SELECT u FROM Utilisateur u")})
 public class Utilisateur implements Serializable {
-
-    @Column(name = "id_marque")
-    private Integer idMarque;
-    @Column(name = "photo_U")
-    private byte[] photoU;
-    @Column(name = "programme_U")
-    private Boolean programmeU;
-
-    @Basic(optional = false)
-    @Size(min = 1, max = 10)
-    @Column(name = "password")
-    private String password;
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
     @Column(name = "id_U")
     private Integer idU;
-    @Basic(optional = false)
-    @Size(min = 1, max = 20)
+    @Size(max = 20)
     @Column(name = "pseudo_U")
     private String pseudoU;
-    @Basic(optional = false)
+    @Size(max = 10)
+    @Column(name = "password")
+    private String password;
     @Column(name = "age_U")
-    private int ageU;
-    @Basic(optional = false)
+    private Integer ageU;
     @Column(name = "consommation_U")
-    private int consommationU;
-    @Basic(optional = false)
+    private Integer consommationU;
     @Column(name = "date_inscription")
     @Temporal(TemporalType.DATE)
     private Date dateInscription;
-    
-    @Transient
-    private String marqueU;
+    @Lob
+    @Column(name = "photo_U")
+    private byte[] photoU;
+    @JoinColumn(name = "id_marque", referencedColumnName = "id_C")
+    @ManyToOne
+    private Cigarette idMarque;
+    @JoinColumn(name = "programme_U", referencedColumnName = "id_P")
+    @ManyToOne
+    private Programme programmeU;
 
     public Utilisateur() {
     }
 
     public Utilisateur(Integer idU) {
         this.idU = idU;
-    }
-
-    public Utilisateur(Integer idU, String pseudoU, String password, int ageU, int consommationU, int idMarque, Date dateInscription, byte[] photoU, boolean programmeU) {
-        this.idU = idU;
-        this.pseudoU = pseudoU;
-        this.password = password;
-        this.ageU = ageU;
-        this.consommationU = consommationU;
-        this.idMarque = idMarque;
-        this.dateInscription = dateInscription;
-        this.photoU = photoU;
-        this.programmeU = programmeU;
     }
 
     public Integer getIdU() {
@@ -108,28 +87,28 @@ public class Utilisateur implements Serializable {
         this.pseudoU = pseudoU;
     }
 
-    public int getAgeU() {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getAgeU() {
         return ageU;
     }
 
-    public void setAgeU(int ageU) {
+    public void setAgeU(Integer ageU) {
         this.ageU = ageU;
     }
 
-    public int getConsommationU() {
+    public Integer getConsommationU() {
         return consommationU;
     }
 
-    public void setConsommationU(int consommationU) {
+    public void setConsommationU(Integer consommationU) {
         this.consommationU = consommationU;
-    }
-
-    public int getIdMarque() {
-        return idMarque;
-    }
-
-    public void setIdMarque(int idMarque) {
-        this.idMarque = idMarque;
     }
 
     public Date getDateInscription() {
@@ -148,11 +127,19 @@ public class Utilisateur implements Serializable {
         this.photoU = photoU;
     }
 
-    public boolean getProgrammeU() {
+    public Cigarette getIdMarque() {
+        return idMarque;
+    }
+
+    public void setIdMarque(Cigarette idMarque) {
+        this.idMarque = idMarque;
+    }
+
+    public Programme getProgrammeU() {
         return programmeU;
     }
 
-    public void setProgrammeU(boolean programmeU) {
+    public void setProgrammeU(Programme programmeU) {
         this.programmeU = programmeU;
     }
 
@@ -180,23 +167,5 @@ public class Utilisateur implements Serializable {
     public String toString() {
         return "Test.Utilisateur[ idU=" + idU + " ]";
     }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getMarqueU() {
-        return marqueU;
-    }
-
-    public void setMarqueU(String marqueU) {
-        this.marqueU = marqueU;
-    }
-
-      
     
 }

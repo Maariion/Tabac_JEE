@@ -39,7 +39,7 @@
                             Cigarettes par jours : <br/>
                             <h:panelGrid columns="1" style="margin-bottom: 10px">
                                 <p:inputText id="txt5" value="#{utilisateurctrl.uti.consommationU}" />
-                                <p:slider for="txt5">
+                                <p:slider for="txt5" minValue="1" maxValue="35">
                                     <p:ajax event="slideEnd" listener="#{sliderView.onSlideEnd}" update="growl" />
                                 </p:slider>
                             </h:panelGrid>
@@ -47,7 +47,7 @@
                             
                             Marque : <br/>
                             <p:outputLabel for="marque" />
-                            <p:selectOneMenu id="marque" value="#{utilisateurctrl.uti.marqueU}" effect="fold" editable="true">
+                            <p:selectOneMenu id="marque" value="#{utilisateurctrl.uti.idMarque}" var="cigarette" effect="fold" editable="true" converter="cigaretteConverter">
                                 <f:selectItems value="#{cigarettectrl.getCigarette()}" />
                             </p:selectOneMenu>
                            <br/> <br/><br/>                       

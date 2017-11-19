@@ -26,5 +26,27 @@ public class CigaretteDao {
         return query.getResultList();
     }
     
+    public Cigarette getCigarette (String marque){
+        Query query = em.createNamedQuery("Cigarette.id_C");
+        return (Cigarette)query.getSingleResult();
+        
+    }
+    
+    public boolean IsInBase(String str){
+        Query query = em.createNamedQuery("Cigarette.findByMarqueC").setParameter("marqueC", str);
+        Cigarette cig = (Cigarette)query.getSingleResult();
+        System.out.println(cig.getNomC());
+        if (cig!=null){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+    
+    public Cigarette getCigaretteWithMarque(String str){
+        Query query=em.createQuery("Select c FROM Cigarette c where c.marqueC = :str").setParameter("str", str);
+        return (Cigarette)query.getSingleResult();
+    }
     
 }

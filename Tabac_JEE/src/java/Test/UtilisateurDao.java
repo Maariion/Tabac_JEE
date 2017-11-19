@@ -41,4 +41,9 @@ public class UtilisateurDao {
         Query query = em.createNamedQuery("Utilisateur.findAll");
         return query.getResultList();
     }
+    
+    public Integer getMarqueId(){
+        Query query = em.createNamedQuery("Utilisateur.getMarqueId");
+        return (Integer) query.getSingleResult();
+    }
 }

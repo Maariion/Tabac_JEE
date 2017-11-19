@@ -3,6 +3,7 @@ package Test;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -11,11 +12,13 @@ import javax.inject.Named;
  */
 @Named(value="utilisateurctrl")
 @ViewScoped
+@ManagedBean
 public class UtilisateurCtrl implements Serializable {
     
     @EJB 
     private UtilisateurDao dao;
     private Utilisateur uti = new Utilisateur();
+    private String idMarqueSelected;
     
     public UtilisateurCtrl(){
         
@@ -25,10 +28,17 @@ public class UtilisateurCtrl implements Serializable {
         return dao.findAll();
     }
     
-    public void addUtilisateur(){
+    public void getIdMarqueSelected(String marque){
+        this .idMarqueSelected=marque;
+    }
+    
+    public String addUtilisateur(){
+        
         dao.addUtilisateur(uti);
+        return "index";
         
     }
+    
 
     public Utilisateur getUti() {
         return uti;

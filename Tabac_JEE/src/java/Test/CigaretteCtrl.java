@@ -7,6 +7,7 @@ package Test;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -16,6 +17,7 @@ import javax.inject.Named;
  */
 @Named(value="cigarettectrl")
 @ViewScoped
+@ManagedBean
 public class CigaretteCtrl implements Serializable {
    @EJB 
     private CigaretteDao dao;
@@ -24,7 +26,11 @@ public class CigaretteCtrl implements Serializable {
     public CigaretteCtrl(){
         
     }
+    
     public List<Cigarette> getCigarette(){
         return dao.findAll();
     }
+    
+    
+    
 }

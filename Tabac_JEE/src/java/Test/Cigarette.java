@@ -6,6 +6,7 @@
 package Test;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,9 +15,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -31,6 +34,9 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Cigarette.findByMarqueC", query = "SELECT c FROM Cigarette c WHERE c.marqueC = :marqueC")
     , @NamedQuery(name = "Cigarette.findByTauxnicotineC", query = "SELECT c FROM Cigarette c WHERE c.tauxnicotineC = :tauxnicotineC")})
 public class Cigarette implements Serializable {
+
+    @OneToMany(mappedBy = "idMarque")
+    private Collection<Utilisateur> utilisateurCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -122,6 +128,15 @@ public class Cigarette implements Serializable {
     @Override
     public String toString() {
         return "Test.Cigarette[ idC=" + idC + " ]";
+    }
+
+    @XmlTransient
+    public Collection<Utilisateur> getUtilisateurCollection() {
+        return utilisateurCollection;
+    }
+
+    public void setUtilisateurCollection(Collection<Utilisateur> utilisateurCollection) {
+        this.utilisateurCollection = utilisateurCollection;
     }
     
 }
