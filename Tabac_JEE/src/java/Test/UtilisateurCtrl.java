@@ -80,4 +80,16 @@ public class UtilisateurCtrl implements Serializable {
     }
     
     
+    public String controlLogin(){
+        if(dao.isInBase(uti.getPseudoU(), uti.getPassword())){
+            uti = dao.getBypseudoAndPsw(uti.getPseudoU(), uti.getPassword());
+            return "mon_programme";
+        }
+        else{
+            return "connexion";
+        }
+        
+    }
+    
+    
 }

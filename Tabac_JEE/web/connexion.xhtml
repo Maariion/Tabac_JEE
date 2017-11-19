@@ -20,20 +20,20 @@
                 </p:menubar>
                 <center>
                 <h2>Renseignez vos informations pour vous connecter à l'application.</h2>
-                    <form method="post" action="connexion.xhtml">
+                    <h:form>
                         <fieldset>
                             <legend>Formulaire de connexion</legend>
                                 Pseudo : <br/>
-                                <p:inputText type="pseudo" id="pseudo" value="${utilisateurctrl.uti.pseudoU}" size="20" maxlength="60" />
+                                <p:inputText type="pseudo" id="pseudo" value="${utilisateurCtrl.uti.pseudoU}" size="20" maxlength="60" />
                                 <br /><br />
                                 Mot de passe: <br/>
                                 <h:panelGrid columns="1" style="margin-bottom: 10px">
-                                <p:password id="inlineFeedback" value="#{passwordView.password4}" feedback="true" inline="true" />
+                                <p:password id="inlineFeedback" value="#{utilisateurCtrl.uti.password}" feedback="true" inline="true" />
                                 </h:panelGrid>
                                 <br /><br />
-                                <p:commandButton type="submit" value="connexion" icon="ui-icon-check"/><br /><br />
+                                <p:commandButton value="connexion" icon="ui-icon-check" action="#{utilisateurCtrl.controlLogin()}" ajax="false"/><br /><br />
                         </fieldset>
-                    </form>
+                    </h:form>
                 </center>
         </h:body>
 </html>

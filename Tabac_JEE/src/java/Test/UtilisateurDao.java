@@ -46,4 +46,20 @@ public class UtilisateurDao {
         Query query = em.createNamedQuery("Utilisateur.getMarqueId");
         return (Integer) query.getSingleResult();
     }
+    
+    public boolean isInBase(String str, String psw){
+        Query query = em.createQuery("SELECT COUNT(u) FROM Utilisateur u WHERE u.pseudoU = :str and u.password=:psw").setParameter("str", str).setParameter("psw", psw);
+        int pos = Integer.parseInt(""+query.getSingleResult());
+        if(0==pos){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    
+    public Utilisateur getBypseudoAndPsw(String str, String psw){
+            Query query = em.createQuery("SELECT u FROM Utilisateur u WHERE u.pseudoU = :str and u.password=:psw").setParameter("str", str).setParameter("psw", psw);
+            return (Utilisateur)query.getSingleResult();
+    }
 }
