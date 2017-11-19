@@ -119,6 +119,7 @@ public class Utilisateur implements Serializable {
         this.dateInscription = dateInscription;
     }
 
+
     public byte[] getPhotoU() {
         return photoU;
     }
