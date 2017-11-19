@@ -20,25 +20,25 @@
                 <p:growl id="growl" showDetail="true"/>
                 <h:form>
                             Pseudo : <br/>
-                            <p:inputText value ="#{utilisateurctrl.uti.pseudoU}"/><br/>
+                            <p:inputText value ="#{utilisateurCtrl.uti.pseudoU}"/><br/>
                              <br/> 
                              
                             Mot de passe: <br/>
                             <h:panelGrid columns="1" style="margin-bottom: 10px">
-                                <p:password id="inlineFeedback" value="#{utilisateurctrl.uti.password}" feedback="true" inline="true" />
+                                <p:password id="inlineFeedback" value="#{utilisateurCtrl.uti.password}" feedback="true" inline="true" />
                             </h:panelGrid>
                              <br/>
                              
                             Age : <br/>
                             <h:panelGrid columns="1" style="margin-bottom: 10px">
-                                <p:inputText id="txt6" value="#{utilisateurctrl.uti.ageU}" />
+                                <p:inputText id="txt6" value="#{utilisateurCtrl.uti.ageU}" />
                                 <p:slider for="txt6"/>
                             </h:panelGrid>
                             <br/>
                                                     
                             Cigarettes par jours : <br/>
                             <h:panelGrid columns="1" style="margin-bottom: 10px">
-                                <p:inputText id="txt5" value="#{utilisateurctrl.uti.consommationU}" />
+                                <p:inputText id="txt5" value="#{utilisateurCtrl.uti.consommationU}" />
                                 <p:slider for="txt5" minValue="1" maxValue="35">
                                     <p:ajax event="slideEnd" listener="#{sliderView.onSlideEnd}" update="growl" />
                                 </p:slider>
@@ -47,11 +47,11 @@
                             
                             Marque : <br/>
                             <p:outputLabel for="marque" />
-                            <p:selectOneMenu id="marque" value="#{utilisateurctrl.uti.idMarque}" var="cigarette" effect="fold" editable="true" converter="cigaretteConverter">
-                                <f:selectItems value="#{cigarettectrl.getCigarette()}" />
+                            <p:selectOneMenu id="marque" value="#{utilisateurCtrl.uti.idMarque}" var="cigarette" effect="fold" editable="true" converter="cigaretteConverter">
+                                <f:selectItems value="#{cigaretteCtrl.getCigarette()}" />
                             </p:selectOneMenu>
                            <br/> <br/><br/>                       
-                           <p:commandButton value ="Créer mon compte" action="#{utilisateurctrl.addUtilisateur()}" ajax="false" /> 
+                           <p:commandButton value ="Créer mon compte" action="#{utilisateurCtrl.addUtilisateur()}" ajax="false" /> 
                     </h:form>                   
             </center>
         </h:body> 
