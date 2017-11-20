@@ -6,7 +6,9 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import java.sql.Timestamp;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 /**
  * @author M.SERAZIN & A.DAYRE
@@ -34,6 +36,10 @@ public class UtilisateurCtrl implements Serializable {
     }
     
     public String addUtilisateur(){
+        if(uti.getAgeU()==null || uti.getPseudoU()==null || uti.getPassword()==null || uti.getConsommationU()==null || uti.getIdMarque()==null){
+            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erreur!", "Remplissez tout les champs."));
+            return "inscription";
+        }
         initialiserDateInscription();
         dao.addUtilisateur(uti);
         return "mon_programme";
@@ -74,12 +80,13 @@ public class UtilisateurCtrl implements Serializable {
     
     
     public String controlLogin(){
-        if(dao.isInBase(uti.getPseudoU(), uti.getPassword())){
-            uti = dao.getBypseudoAndPsw(uti.getPseudoU(), uti.getPassword());
-            return "mon_programme";
+        if(!dao.isInBase(uti.getPseudoU(), uti.getPassword())){
+            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"Erreur !", "Pseudo ou mot de passe incorrect"));
+            return "connexion";
         }
         else{
-            return "connexion";
+            uti = dao.getBypseudoAndPsw(uti.getPseudoU(), uti.getPassword());
+            return "mon_programme";
         }
         
     }
