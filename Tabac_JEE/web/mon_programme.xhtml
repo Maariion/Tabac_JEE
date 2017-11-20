@@ -6,7 +6,6 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>StopSmoke</title>
-        gagna
         <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
@@ -14,16 +13,21 @@
                 <p:menuitem value="Se désinscrire" url="desinscription.xhtml" />
             </p:menubar>
                 <h1>Mon programme</h1>
-         
                 <h:form>
-                Votre pseudo==> <p:inputText value="#{utilisateurCtrl.uti.pseudoU}" /><br/>
-                Votre mot de passe==> <p:inputText value="#{utilisateurCtrl.uti.password}"/><br/>
-                Votre âge==> <p:inputText value="#{utilisateurCtrl.uti.ageU}"/><br/>
-                Votre consommation par jour==> <p:inputText value="#{utilisateurCtrl.uti.consommationU}"/><br/>
-                La marque des cigarettes que vous fumez==> <p:inputText value="#{utilisateurCtrl.uti.idMarque.marqueC}"/><br/>
-                
-                <p:commandButton value ="Modifier" action="#{utilisateurCtrl.update()}" ajax="false"/>
+                    <center>
+                        Votre pseudo==> <p:inputText value="#{utilisateurCtrl.uti.pseudoU}" /><br/>
+                        Votre mot de passe==> <p:inputText value="#{utilisateurCtrl.uti.password}"/><br/>
+                        Votre âge==> <p:inputText value="#{utilisateurCtrl.uti.ageU}"/><br/>
+                        Votre consommation par jour==> <p:inputText value="#{utilisateurCtrl.uti.consommationU}"/><br/>
+                        La marque des cigarettes que vous fumez==> <p:inputText value="#{utilisateurCtrl.uti.idMarque.marqueC}"/><br/>
+
+                        <p:commandButton value ="Modifier" action="#{utilisateurCtrl.update()}" ajax="false"/>
+                    </center>
+                    <br/>
+                    <p:commandButton value ="Me déconnecter" action="#{utilisateurCtrl.deconnexion()}" ajax="false" />
                 </h:form>
+                
+                
     </h:body>
 </html>
 

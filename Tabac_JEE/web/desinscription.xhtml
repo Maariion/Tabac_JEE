@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     
     <h:head>
         <title>StopSmoke</title>
@@ -17,6 +18,7 @@
                     <p:menuitem value="Retour" url="index.xhtml" />
                 </p:menubar>
                 <center>
+                    
                 <h2>Renseignez votre pseudo et mot de passe pour vous désinscrire de l'application.</h2>
                     <form method="post" action="desinscription.xhtml">
                         <fieldset>
@@ -30,7 +32,14 @@
                                 </h:panelGrid>
                                  <br/>
                                 <br /><br />
-                                <p:commandButton type="submit" value="Je me désinscris" icon="ui-icon-check" action="#{utilisateurCtrl.delUtilisateur()}"/><br /><br />
+                                <p:commandButton type="submit" value="Je me désinscris" icon="ui-icon-check" action="#{utilisateurCtrl.delUtilisateur()}" >
+                                    <p:confirm header ="Confirmation" message="Etes-vous sûr ?" icon="ui-icon-alert"/>
+                                </p:commandButton>
+                                    <p:confirmDialog global="true" showEffect="clip" hideEffect="clip">
+                                    <p:commandButton value="OUIIIIIIII" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/> 
+                                    <p:commandButton value="Surtout pas grand fou ! " type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/> 
+                                </p:confirmDialog>
+                                    
                         </fieldset>
                     </form>
                 </center>

@@ -78,6 +78,10 @@ public class UtilisateurCtrl implements Serializable {
         this.uti = uti;
     }
     
+    public String deconnexion(){
+        Utilisateur uti = new Utilisateur();
+        return "index";
+    }
     
     public String controlLogin(){
         if(!dao.isInBase(uti.getPseudoU(), uti.getPassword())){
