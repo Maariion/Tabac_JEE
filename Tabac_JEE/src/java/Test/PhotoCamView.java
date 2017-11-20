@@ -40,8 +40,7 @@ public class PhotoCamView {
         byte[] data = captureEvent.getData();
  
         ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-        String newFileName = externalContext.getRealPath("") + File.separator + "resources" + File.separator + "demo" +
-                                    File.separator + "images" + File.separator + "photocam" + File.separator + filename + ".jpeg";
+        String newFileName = externalContext.getRealPath("") + File.separator + "res" + File.separator + "cam" + File.separator + filename + ".jpeg";
          
         FileImageOutputStream imageOutput;
         try {

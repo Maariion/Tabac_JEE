@@ -79,7 +79,7 @@ public class UtilisateurCtrl implements Serializable {
     }
     
     public String deconnexion(){
-        Utilisateur uti = new Utilisateur();
+        uti = new Utilisateur();
         return "index";
     }
     
