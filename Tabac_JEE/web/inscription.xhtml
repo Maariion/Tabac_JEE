@@ -25,7 +25,8 @@
                              
                             Mot de passe: <br/>
                             <h:panelGrid columns="1" style="margin-bottom: 10px">
-                                <p:password id="inlineFeedback" value="#{utilisateurCtrl.uti.password}" feedback="true" inline="true" />
+                                <p:password id="inlineFeedback" value="#{utilisateurCtrl.uti.password}" feedback="true" inline="true"/>
+                                <p:tooltip id="toolTipFocus" for="inlineFeedback" value="Le mot de passe doit contenir entre 1 et 10 caractères." showEffect="clip" hideEffect="clip" position="right" />
                             </h:panelGrid>
                              <br/>
                              
