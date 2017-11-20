@@ -62,4 +62,5 @@ public class UtilisateurDao {
             Query query = em.createQuery("SELECT u FROM Utilisateur u WHERE u.pseudoU = :str and u.password=:psw").setParameter("str", str).setParameter("psw", psw);
             return (Utilisateur)query.getSingleResult();
     }
+    
 }

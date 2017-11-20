@@ -58,16 +58,9 @@ public class UtilisateurCtrl implements Serializable {
     }
     
    
-    public String update(int idU, String pseudo, String pass, int age, int conso, byte photo, Cigarette cig, Programme prog, Date d){
+    public String update(){
         dao.updateUtilisateur(uti);
-        this.uti.setAgeU(age);
-        this.uti.setConsommationU(conso);
-        this.uti.setDateInscription(d);
-        this.uti.setIdMarque(cig);
-        this.uti.setPassword(pass);
-       //this.uti.setPhotoU(photo);
-        this.uti.setProgrammeU(prog);
-        this.uti.setPseudoU(pseudo);
+       
         return "index";
     }
 

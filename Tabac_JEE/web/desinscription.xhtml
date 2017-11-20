@@ -18,18 +18,19 @@
                 </p:menubar>
                 <center>
                 <h2>Renseignez votre pseudo et mot de passe pour vous désinscrire de l'application.</h2>
-                    <form method="post" action="connexion.xhtml">
+                    <form method="post" action="desinscription.xhtml">
                         <fieldset>
                             <legend>Formulaire de désinscription</legend>
                                 Pseudo : <br/>
-                                <p:inputText type="pseudo" id="pseudo" value="${utilisateurctrl.uti.pseudoU}" size="20" maxlength="60" />
+                                <p:inputText type="pseudo" id="pseudo" value="${utilisateurCtrl.uti.pseudoU}" size="20" maxlength="60" />
                                 <br /><br />
                                 Mot de passe: <br/>
                                 <h:panelGrid columns="1" style="margin-bottom: 10px">
-                                <p:password id="inlineFeedback" value="#{passwordView.password4}" feedback="true" inline="true" />
+                                    <p:password id="inlineFeedback" value="#{utilisateurCtrl.uti.password}" feedback="true" inline="true" />
                                 </h:panelGrid>
+                                 <br/>
                                 <br /><br />
-                                <p:commandButton type="submit" value="Je me désinscris" icon="ui-icon-check" action="#{utilisateurctrl.delUtilisateur()}"/><br /><br />
+                                <p:commandButton type="submit" value="Je me désinscris" icon="ui-icon-check" action="#{utilisateurCtrl.delUtilisateur()}"/><br /><br />
                         </fieldset>
                     </form>
                 </center>
