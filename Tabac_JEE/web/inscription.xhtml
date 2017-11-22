@@ -24,8 +24,10 @@
             </p:steps>
             <center>
                 <h2>Je crée mon compte :</h2> <br/>
+                
                 <p:growl id="growl" showDetail="true"/>
                 <h:form>
+                   
                     <h4><u>Pseudo :</u></h4>
                     <p:inputText value ="#{utilisateurCtrl.uti.pseudoU}"/><br/>
                     
@@ -55,7 +57,9 @@
                         <f:selectItems value="#{cigaretteCtrl.getCigarette()}" />
                     </p:selectOneMenu><br/> <br/><br/>
                     <p:commandButton value ="Créer mon compte" action="#{utilisateurCtrl.addUtilisateur()}" ajax="false" /> 
-                    </h:form>                   
+                  
+                </h:form>
+                
             </center>
         </h:body> 
 </html>
