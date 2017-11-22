@@ -9,23 +9,24 @@
         <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
+         <h1>Modification de mes données</h1>
             <p:menubar styleClass="menu">
                 <p:menuitem value="Se désinscrire" url="desinscription.xhtml" />
+                <p:menuitem value="Retour à mon programme" url="mon_programme.xhtml" />
             </p:menubar>
-        <div id ="global">
-                <h1>Mon programme</h1>
+            <div id ="global">
                     <h:form>
                             <div id="infos">
-                                Votre pseudo==> <p:inputText value="#{utilisateurCtrl.uti.pseudoU}" /><br/>
-                                Votre mot de passe==> <p:inputText value="#{utilisateurCtrl.uti.password}"/><br/>
-                                Votre âge==> <p:inputText value="#{utilisateurCtrl.uti.ageU}"/><br/>
-                                Votre consommation par jour==> <p:inputText value="#{utilisateurCtrl.uti.consommationU}"/><br/>
-                                La marque des cigarettes que vous fumez==> <p:inputText value="#{utilisateurCtrl.uti.idMarque.marqueC}"/><br/>
+                            <h3><u>Pseudo:</u><p:inputText value="  #{utilisateurCtrl.uti.pseudoU}" /><br/></h3> 
+                            <h3><u>Age:</u>  <p:inputText value="  #{utilisateurCtrl.uti.ageU}"/><br/></h3>
+                            <h3><u>Consommation par jour:</u>  <p:inputText value="  #{utilisateurCtrl.uti.consommationU}"/><br/></h3>
+                            <h3><u>La marque des cigarettes:</u>  <p:inputText value="  #{utilisateurCtrl.uti.idMarque.marqueC}"/><br/></h3>
                                 <br/>
                                 <p:commandButton value ="Modifier" action="#{utilisateurCtrl.update()}" ajax="false"/>
                                 <p:commandButton value ="Me déconnecter" action="#{utilisateurCtrl.deconnexion()}" ajax="false" />
                             </div> 
                     </h:form>
+                    
             </div>    
     </h:body>
 </html>
