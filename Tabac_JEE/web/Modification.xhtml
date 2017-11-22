@@ -10,6 +10,7 @@
     </h:head>
     <h:body>
          <h1>Modification de mes données</h1>
+         <h:form><p:commandButton value ="Me déconnecter" action="#{utilisateurCtrl.deconnexion()}" ajax="false" /></h:form><br/>
             <p:menubar styleClass="menu">
                 <p:menuitem value="Se désinscrire" url="desinscription.xhtml" />
                 <p:menuitem value="Retour à mon programme" url="mon_programme.xhtml" />
@@ -23,7 +24,6 @@
                             <h3><u>La marque des cigarettes:</u>  <p:inputText value="  #{utilisateurCtrl.uti.idMarque.marqueC}"/><br/></h3>
                                 <br/>
                                 <p:commandButton value ="Modifier" action="#{utilisateurCtrl.update()}" ajax="false"/>
-                                <p:commandButton value ="Me déconnecter" action="#{utilisateurCtrl.deconnexion()}" ajax="false" />
                             </div> 
                     </h:form>
                     
