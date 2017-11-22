@@ -11,36 +11,19 @@
         <h:body>   
             <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
             <h1><u>Inscription</u></h1>
-            <p:menubar styleClass="menu">
-           
+                <p:menubar styleClass="menu">
                     <p:menuitem value="Programme" url="mon_programme" />
                     <p:menuitem value="Retour" url="index.xhtml" />
-               
-            </p:menubar>
-            <p:steps activeIndex="1" styleClass="custom" readonly="false">
+                </p:menubar>
+            <p:steps activeIndex="3" styleClass="custom" readonly="false">
                 <p:menuitem value="Informations personnelles" url="inscription_1.xhtml"/>
                 <p:menuitem value="Informations de consommation" url="inscription_2.xhtml"/>
                 <p:menuitem value="Choix du programme" url="inscription_3.xhtml"/>
             </p:steps>
             <center>
-                <h2>Je crée mon compte :</h2> <br/>
+                <h2>Je crée mon compte : </h2>
                 <p:growl id="growl" showDetail="true"/>
-                <h:form>
-                    <h4><u>Pseudo :</u></h4>
-                    <p:inputText value ="#{utilisateurCtrl.uti.pseudoU}"/><br/>
-                    
-                    <h4><u>Mot de passe:</u></h4>
-                    <h:panelGrid columns="1" style="margin-bottom: 10px">
-                        <p:password id="inlineFeedback" value="#{utilisateurCtrl.uti.password}" feedback="true" inline="true"/>
-                        <p:tooltip id="toolTipFocus" for="inlineFeedback" value="Le mot de passe doit contenir entre 1 et 10 caractères." showEffect="clip" hideEffect="clip" position="right" />
-                    </h:panelGrid>
-         
-                    <h4><u>Age :</u></h4>
-                    <h:panelGrid columns="1" style="margin-bottom: 10px">
-                        <p:inputText id="txt6" value="#{utilisateurCtrl.uti.ageU}" />
-                        <p:slider for="txt6"/>
-                    </h:panelGrid> 
-                                                    
+                <h:form>                  
                     <h4><u>Cigarettes par jours :</u></h4>
                     <h:panelGrid columns="1" style="margin-bottom: 10px">
                         <p:inputText id="txt5" value="#{utilisateurCtrl.uti.consommationU}" />
@@ -53,7 +36,7 @@
                     <p:outputLabel for="marque" />
                     <p:selectOneMenu id="marque" value="#{utilisateurCtrl.uti.idMarque}" var="cigarette" effect="fold" editable="true" converter="cigaretteConverter">
                         <f:selectItems value="#{cigaretteCtrl.getCigarette()}" />
-                    </p:selectOneMenu><br/> <br/><br/>
+                    </p:selectOneMenu><br/> <br/><br/>                      
                     <p:commandButton value ="Créer mon compte" action="#{utilisateurCtrl.addUtilisateur()}" ajax="false" /> 
                     </h:form>                   
             </center>

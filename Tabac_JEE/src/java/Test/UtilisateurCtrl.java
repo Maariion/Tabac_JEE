@@ -6,9 +6,18 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.util.Calendar;
+import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import org.primefaces.model.chart.Axis;
+import org.primefaces.model.chart.AxisType;
+import org.primefaces.model.chart.BarChartModel;
+import org.primefaces.model.chart.LineChartModel;
+import org.primefaces.model.chart.ChartSeries;
+import org.primefaces.model.chart.LineChartSeries;
 
 /**
  * @author M.SERAZIN & A.DAYRE
@@ -22,10 +31,14 @@ public class UtilisateurCtrl implements Serializable {
     private UtilisateurDao dao;
     private Utilisateur uti = new Utilisateur();
     private String idMarqueSelected;
+    private LineChartModel animatedModel= new LineChartModel();
+    
     
     public UtilisateurCtrl(){
         
     }
+    
+
     
     public List<Utilisateur> getUtilisateur(){
         return dao.findAll();
@@ -93,6 +106,41 @@ public class UtilisateurCtrl implements Serializable {
             return "mon_programme";
         }
         
+    }
+    
+    public LineChartModel getAnimatedModel() {
+        return animatedModel;
+    }
+    public void createAnimatedModels() {
+        animatedModel = initLinearModel();
+        animatedModel.setTitle("Line Chart");
+        animatedModel.setAnimate(true);
+        animatedModel.setLegendPosition("se");
+        Axis yAxis = animatedModel.getAxis(AxisType.Y);
+        yAxis.setMin(0);
+        yAxis.setMax(10); 
+    }
+    
+    private LineChartModel initLinearModel() {
+        LineChartModel model = new LineChartModel();
+        LineChartSeries series1 = new LineChartSeries();
+        Date d=uti.getDateInscription();
+        
+        for(int i =uti.getConsommationU(); i>0; i=i-2){
+            System.out.println(d);
+            series1.set(d, i);
+            incrementDate(d);
+            }
+        
+        model.addSeries(series1);
+        return model;
+    }
+    
+    private void incrementDate(Date d){
+        Calendar c = Calendar.getInstance();
+        c.setTime(d);
+        c.add(Calendar.DATE, 1);
+        d=c.getTime();
     }
     
     

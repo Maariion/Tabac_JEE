@@ -12,31 +12,17 @@
             <p:menubar styleClass="menu">
                 <p:menuitem value="Se désinscrire" url="desinscription.xhtml" />
             </p:menubar>
-                <h1>Mon programme</h1>
-                <center>
-                <h:form>        
-                    <h:panelGrid columns="3" cellpadding="5">
-                        <p:photoCam widgetVar="pc" listener="#{photoCamView.oncapture}" update="photo" />
-                        <p:commandButton type="button" value="Capture" onclick="PF('pc').capture()"/>
-                        <p:outputPanel id="photo">
-                        <p:graphicImage name="res/cam/#{photoCamView.filename}.jpeg" rendered="#{not empty photoCamView.filename}"/>
-                        </p:outputPanel>
-                    </h:panelGrid>
-                </h:form>
-                <h:form>
-                        Votre pseudo==> <p:inputText value="#{utilisateurCtrl.uti.pseudoU}" /><br/>
-                        Votre mot de passe==> <p:inputText value="#{utilisateurCtrl.uti.password}"/><br/>
-                        Votre âge==> <p:inputText value="#{utilisateurCtrl.uti.ageU}"/><br/>
-                        Votre consommation par jour==> <p:inputText value="#{utilisateurCtrl.uti.consommationU}"/><br/>
-                        La marque des cigarettes que vous fumez==> <p:inputText value="#{utilisateurCtrl.uti.idMarque.marqueC}"/><br/>
-                        <br/>
-
-                        <p:commandButton value ="Modifier" action="#{utilisateurCtrl.update()}" ajax="false"/>
-                        <p:commandButton value ="Me déconnecter" action="#{utilisateurCtrl.deconnexion()}" ajax="false" />
-                </h:form>
-                                    
-                </center>
+        <h1><u>Mon programme</u></h1>
+        <div id ="global">
                 
+                <div id="infos">
+                    <h3><u>Pseudo:</u><h:outputText value="  #{utilisateurCtrl.uti.pseudoU}" /><br/></h3> 
+                    <h3><u>Age:</u>  <h:outputText value="  #{utilisateurCtrl.uti.ageU}"/><br/></h3>
+                    <h3><u>Consommation par jour:</u>  <h:outputText value="  #{utilisateurCtrl.uti.consommationU}"/><br/></h3>
+                    <h3><u>La marque des cigarettes:</u>  <h:outputText value="  #{utilisateurCtrl.uti.idMarque.marqueC}"/><br/></h3>
+                </div> 
+
+        </div>
     </h:body>
 </html>
 

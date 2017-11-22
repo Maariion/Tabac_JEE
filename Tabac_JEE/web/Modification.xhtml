@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>StopSmoke</title>
+        <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+            <p:menubar styleClass="menu">
+                <p:menuitem value="Se désinscrire" url="desinscription.xhtml" />
+            </p:menubar>
+        <div id ="global">
+                <h1>Mon programme</h1>
+                    <h:form>
+                            <div id="infos">
+                                Votre pseudo==> <p:inputText value="#{utilisateurCtrl.uti.pseudoU}" /><br/>
+                                Votre mot de passe==> <p:inputText value="#{utilisateurCtrl.uti.password}"/><br/>
+                                Votre âge==> <p:inputText value="#{utilisateurCtrl.uti.ageU}"/><br/>
+                                Votre consommation par jour==> <p:inputText value="#{utilisateurCtrl.uti.consommationU}"/><br/>
+                                La marque des cigarettes que vous fumez==> <p:inputText value="#{utilisateurCtrl.uti.idMarque.marqueC}"/><br/>
+                                <br/>
+                                <p:commandButton value ="Modifier" action="#{utilisateurCtrl.update()}" ajax="false"/>
+                                <p:commandButton value ="Me déconnecter" action="#{utilisateurCtrl.deconnexion()}" ajax="false" />
+                            </div> 
+                    </h:form>
+            </div>    
+    </h:body>
+</html>
+
