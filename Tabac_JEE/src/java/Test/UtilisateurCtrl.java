@@ -38,7 +38,6 @@ public class UtilisateurCtrl implements Serializable {
         
     }
     
-
     
     public List<Utilisateur> getUtilisateur(){
         return dao.findAll();
@@ -109,27 +108,29 @@ public class UtilisateurCtrl implements Serializable {
     }
     
     public LineChartModel getAnimatedModel() {
-        return animatedModel;
+        return createAnimatedModels();
     }
-    public void createAnimatedModels() {
+    public LineChartModel createAnimatedModels() {
         animatedModel = initLinearModel();
         animatedModel.setTitle("Line Chart");
         animatedModel.setAnimate(true);
         animatedModel.setLegendPosition("se");
         Axis yAxis = animatedModel.getAxis(AxisType.Y);
         yAxis.setMin(0);
-        yAxis.setMax(10); 
+        yAxis.setMax(40); 
+        return animatedModel;
     }
     
     private LineChartModel initLinearModel() {
         LineChartModel model = new LineChartModel();
         LineChartSeries series1 = new LineChartSeries();
         Date d=uti.getDateInscription();
+        int date = d.getDate();
         
-        for(int i =uti.getConsommationU(); i>0; i=i-2){
+        for(int i =uti.getConsommationU(); i>=0; i=i-2){
             System.out.println(d);
-            series1.set(d, i);
-            d= incrementDate(d);
+            series1.set(date, i);
+            date++;
             }
         
         model.addSeries(series1);
@@ -143,6 +144,7 @@ public class UtilisateurCtrl implements Serializable {
         c.add(Calendar.DATE, 1);
         return c.getTime();
     }
+
     
     
 }
