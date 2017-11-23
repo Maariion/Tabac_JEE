@@ -17,12 +17,9 @@
                     <p:menuitem value="Retour" url="index.xhtml" />
                
             </p:menubar>
-            <p:steps activeIndex="1" styleClass="custom" readonly="false">
-                <p:menuitem value="Informations personnelles" url="inscription_1.xhtml"/>
-                <p:menuitem value="Informations de consommation" url="inscription_2.xhtml"/>
-                <p:menuitem value="Choix du programme" url="inscription_3.xhtml"/>
-            </p:steps>
+            <br/><br/><br/>
             <center>
+                <fieldset style="background-color: white; border: 2px solid red; width: 50%">
                 <h2>Je crée mon compte :</h2> <br/>
                 
                 <p:growl id="growl" showDetail="true"/>
@@ -56,10 +53,9 @@
                     <p:selectOneMenu id="marque" value="#{utilisateurCtrl.uti.idMarque}" var="cigarette" effect="fold" editable="true" converter="cigaretteConverter">
                         <f:selectItems value="#{cigaretteCtrl.getCigarette()}" />
                     </p:selectOneMenu><br/> <br/><br/>
-                    <p:commandButton value ="Créer mon compte" action="#{utilisateurCtrl.addUtilisateur()}" ajax="false" /> 
-                  
+                    <p:commandButton value ="Créer mon compte" action="#{utilisateurCtrl.addUtilisateur()}" ajax="false" />  
                 </h:form>
-                
+            </fieldset>
             </center>
         </h:body> 
 </html>

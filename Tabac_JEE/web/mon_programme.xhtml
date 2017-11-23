@@ -16,13 +16,17 @@
                 <p:menuitem value="Modifier mes informations" url="Modification.xhtml" />
             </p:menubar>
         
-        <div id ="global"> 
-                <div id="infos">
+        <div id ="global">
+            <br/>
+            <div id="infos" style="height:800px; background-color:#8C0B0B">
                     <h3><u>Pseudo:</u><h:outputText value="  #{utilisateurCtrl.uti.pseudoU}" /><br/></h3> 
                     <h3><u>Age:</u>  <h:outputText value="  #{utilisateurCtrl.uti.ageU}"/><br/></h3>
                     <h3><u>Consommation par jour:</u>  <h:outputText value="  #{utilisateurCtrl.uti.consommationU}"/><br/></h3>
                     <h3><u>La marque des cigarettes:</u>  <h:outputText value="  #{utilisateurCtrl.uti.idMarque.marqueC}"/><br/></h3>
-                </div> 
+                </div>
+            <div id="courbe">
+                <p:chart type="line" model="#{utilisateurCtrl.animatedModel}" style="width:400px;"/>
+            </div>
         </div>
     </h:body>
 </html>

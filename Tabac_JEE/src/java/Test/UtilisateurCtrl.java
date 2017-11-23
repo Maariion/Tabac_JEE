@@ -31,7 +31,7 @@ public class UtilisateurCtrl implements Serializable {
     private UtilisateurDao dao;
     private Utilisateur uti = new Utilisateur();
     private String idMarqueSelected;
-    private LineChartModel animatedModel= new LineChartModel();
+    private LineChartModel animatedModel;
     
     
     public UtilisateurCtrl(){
@@ -129,18 +129,19 @@ public class UtilisateurCtrl implements Serializable {
         for(int i =uti.getConsommationU(); i>0; i=i-2){
             System.out.println(d);
             series1.set(d, i);
-            incrementDate(d);
+            d= incrementDate(d);
             }
         
         model.addSeries(series1);
         return model;
     }
     
-    private void incrementDate(Date d){
+    private Date incrementDate(Date d){
+       
         Calendar c = Calendar.getInstance();
         c.setTime(d);
         c.add(Calendar.DATE, 1);
-        d=c.getTime();
+        return c.getTime();
     }
     
     

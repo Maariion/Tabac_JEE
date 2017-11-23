@@ -17,7 +17,7 @@ h1
 {
     font-family: "Lucida Console", Courier, monospace;
     font-size: 50px;
-    color: #008080;
+    color: #DE0E0E;
     text-align: center;
     margin-right: 5%; 
 }
@@ -31,8 +31,8 @@ h2{
 }
 h3{
  
-  font-size: 30px; 
-  color: #4682B4;
+  font-size: 28px; 
+  color: white;
 }
 
 h4{
@@ -40,34 +40,26 @@ h4{
   font-size: 20px; 
   color: #FFFFF;
 }
-body
-{
-    background-color: #F0FFF0;
-}
 
-
-head
-{
-    background-color: #F0FFF0;
-}
-html
-{
-    background-color: #F0FFF0;
-}
-layoutUnit
-{
-   background-color: #F0FFF0; 
+html{
+    background: url('../res/autres/background.png') no-repeat center center fixed;
+    background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
+    -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
+    -moz-background-size: cover; /* optional for Firefox 3.6 */ 
+    -o-background-size: cover; /* for Opera 9.5 */
+    margin: 0; /* to remove the default white margin of body */
+    padding: 0; /* to remove the default white margin of body */
 }
 
 .ui-menuitem-text{
     font-size:32px;
-    color:#191970;
+    color:#FFFFFF;
     align-content: center;
 }
 
 .ui-menubar{
     background-image: none;
-    background-color: #66CDAA;
+    background-color: #8C0B0B;
 
 }
 
@@ -88,10 +80,7 @@ layoutUnit
 
 #infos{
         width:25%;
-        height:100%;
-        border:1px solid blue;/* Uniquement pour visualiser le cadre */
         padding:10px;
-        margin:auto; /* Pour un centrage automatique */
        
         
 }
