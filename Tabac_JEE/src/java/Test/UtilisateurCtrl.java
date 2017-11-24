@@ -79,8 +79,7 @@ public class UtilisateurCtrl implements Serializable {
    
     public String update(){
         dao.updateUtilisateur(uti);
-       
-        return "index";
+        return "mon_programme";
     }
 
     public Utilisateur getUti() {
