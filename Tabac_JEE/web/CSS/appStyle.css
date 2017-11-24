@@ -87,9 +87,14 @@ html{
 #courbe{
         width:75%;
         height:100%;
-        border:1px solid blue;/* Uniquement pour visualiser le cadre */
         padding:10px;
         margin:auto; /* Pour un centrage automatique */
+ }
+ 
+ #bordure{
+        width:25%;
+        padding:10px;
+
  }
  .ui-steps .ui-steps-item {
     width: 14%;

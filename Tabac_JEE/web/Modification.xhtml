@@ -14,20 +14,23 @@
             <p:menubar styleClass="menu">
                 <p:menuitem value="Se désinscrire" url="desinscription.xhtml" />
                 <p:menuitem value="Retour à mon programme" url="mon_programme.xhtml" />
-            </p:menubar>
-            <div id ="global">
+            </p:menubar><br/><br/><br/><br/>
+                <center>
                     <h:form>
-                            <div id="infos">
-                            <h3><u>Pseudo:</u><p:inputText value="  #{utilisateurCtrl.uti.pseudoU}" /><br/></h3> 
-                            <h3><u>Age:</u>  <p:inputText value="  #{utilisateurCtrl.uti.ageU}"/><br/></h3>
-                            <h3><u>Consommation par jour:</u>  <p:inputText value="  #{utilisateurCtrl.uti.consommationU}"/><br/></h3>
-                            <h3><u>La marque des cigarettes:</u>  <p:inputText value="  #{utilisateurCtrl.uti.idMarque.marqueC}"/><br/></h3>
+                        <fieldset style="background-color: white; border: 2px solid red; width:70%">
+                            <u>Pseudo:</u><p:inputText value="#{utilisateurCtrl.uti.pseudoU}" /><br/>
+                            <u>Age:</u>  <p:inputText value="#{utilisateurCtrl.uti.ageU}"/><br/>
+                            <u>Consommation par jour:</u>  <p:inputText value="#{utilisateurCtrl.uti.consommationU}"/><br/>
+                            <u>La marque des cigarettes:</u>  <p:inputText value="#{utilisateurCtrl.uti.idMarque.marqueC}"/><br/>
                                 <br/>
                                 <p:commandButton value ="Modifier" action="#{utilisateurCtrl.update()}" ajax="false"/>
-                            </div> 
+                                <p:dialog header="Effects" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
+                                    <h:outputText value="Les changements ont bien été effectués" />
+                                </p:dialog>
+                            </fieldset> 
+                            
                     </h:form>
-                    
-            </div>    
+                </center>         
     </h:body>
 </html>
 

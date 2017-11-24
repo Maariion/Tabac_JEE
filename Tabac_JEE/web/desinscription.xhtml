@@ -18,11 +18,10 @@
                     <p:menuitem value="Retour" url="index.xhtml" />
                 </p:menubar>
                 <center>
-                    
-                <h2>Renseignez votre pseudo et mot de passe pour vous désinscrire de l'application.</h2>
-                    <form method="post" action="desinscription.xhtml">
-                        <fieldset>
-                            <legend>Formulaire de désinscription</legend>
+                    <br/><br/><br/><br/>
+                    <h:form>
+                        <fieldset style="background-color: white; border: 2px solid red; width:70%">
+                            <h2>Renseignez votre pseudo et mot de passe pour vous désinscrire de l'application.</h2>
                                 Pseudo : <br/>
                                 <p:inputText type="pseudo" id="pseudo" value="${utilisateurCtrl.uti.pseudoU}" size="20" maxlength="60" />
                                 <br /><br />
@@ -41,7 +40,7 @@
                                 </p:confirmDialog>
                                     
                         </fieldset>
-                    </form>
+                    </h:form>
                 </center>
         </h:body>
 </html>

@@ -63,4 +63,10 @@ public class UtilisateurDao {
             return (Utilisateur)query.getSingleResult();
     }
     
+    
+    public Programme getProgrammeUti(int id){
+        Query query=em.createQuery("SELECT p FROM Programme p WHERE p.idP = :id").setParameter("id", id);
+        return(Programme)query.getSingleResult();
+    }
+    
 }

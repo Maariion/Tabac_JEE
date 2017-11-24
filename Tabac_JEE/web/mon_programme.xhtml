@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>StopSmoke</title>
         <link href="CSS/appStyle.css" rel="stylesheet" type="text/css"/>
@@ -24,8 +25,22 @@
                     <h3><u>Consommation par jour:</u>  <h:outputText value="  #{utilisateurCtrl.uti.consommationU}"/><br/></h3>
                     <h3><u>La marque des cigarettes:</u>  <h:outputText value="  #{utilisateurCtrl.uti.idMarque.marqueC}"/><br/></h3>
                 </div>
-            <div id="courbe">
-                <p:chart type="line" model="#{utilisateurCtrl.animatedModel}" style="width:400px;"/>
+            <div id="courbe" style="background-color: white">
+                <p:chart type="line" model="#{utilisateurCtrl.animatedModel}" style="width:800px;"/><br/><br/><br/><br/><br/><br/>
+                <c:if test="#{not empty utilisateurCtrl.uti.programmeU}">
+                    <p:chart type="line" model="#{utilisateurCtrl.progModel}" style="width: 600px"/>
+                </c:if>
+                
+            </div>
+            <div id="bordure" style="background-color:#8C0B0B;height:800px; width:295px">
+                <center>
+                <h:form><br/>
+                    <p:commandButton value ="Programme 1" action="#{utilisateurCtrl.prog1()}" ajax="false" /><br/><br/><br/>
+                    <p:commandButton value ="Programme 2" action="#{utilisateurCtrl.prog2()}" ajax="false" /><br/><br/><br/>
+                    <p:commandButton value ="Programme 3" action="#{utilisateurCtrl.prog3()}" ajax="false" /><br/><br/><br/>
+                    <p:commandButton value ="Programme 4" action="#{utilisateurCtrl.prog4()}" ajax="false" /><br/><br/><br/>
+                </h:form>
+                </center>
             </div>
         </div>
     </h:body>

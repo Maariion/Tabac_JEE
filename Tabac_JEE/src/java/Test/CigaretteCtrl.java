@@ -32,5 +32,4 @@ public class CigaretteCtrl implements Serializable {
     }
     
     
-    
 }
